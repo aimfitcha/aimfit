@@ -10,7 +10,7 @@ function UserListing({ users, onEdit }) {
   const getPresentDate = () => new Date();
 
   const isDue = (joiningDate) => {
-    const joining = parseDate(joiningDate); // Parse joining_date into a Date object
+    const joining = new Date(joiningDate);
     const dueDate = new Date(joining);
     dueDate.setDate(joining.getDate() + 30); // Add 30 days to the joining date
     return dueDate > getPresentDate();
